@@ -116,10 +116,12 @@ void input()
 
 void logic()
 {
-    tailX[0] = x;
-	tailY[0] = y;
+    
     int prevX = tailX[0];
 	int prevY = tailY[0];
+    tailX[0] = x;
+	tailY[0] = y;
+    
 	int prev2X, prev2Y;
 	
 	for (int i = 1; i < nTail; i++)
