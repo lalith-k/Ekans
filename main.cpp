@@ -14,6 +14,11 @@ enum Direction{STOP =0, LEFT, RIGHT, UP, DOWN};
 
 Direction dir;
 
+void log(int x)
+{
+    std::cout<<"Your final score is : "<<x<<std::endl;
+}
+
 void setup()
 {
   gameOver = false;
@@ -83,7 +88,7 @@ void draw()
        std::cout<<"#";
     }
     std::cout<<std::endl;
-    std::cout<< "Score : "<< score;
+    std::cout<< "Score : "<< score<<std::endl;
 
 }
 
@@ -121,7 +126,7 @@ void logic()
 	int prevY = tailY[0];
     tailX[0] = x;
 	tailY[0] = y;
-    
+
 	int prev2X, prev2Y;
 	
 	for (int i = 1; i < nTail; i++)
@@ -130,7 +135,7 @@ void logic()
 		prev2Y = tailY[i];
 		tailX[i] = prevX; //pushing xHead
 		tailY[i] = prevY; //pushing yHead
-		prevX = prev2X;  //last elemnt of xtail
+		prevX = prev2X;  //last element of xtail
 		prevY = prev2Y;  //last element of ytail
 
         
@@ -154,7 +159,7 @@ void logic()
             break;                         
     }
     
-    if(x>=width){x = 0;} else if(x < 0) {x = width-1;}
+    if(x>=width){x = 0;} else if(x < 0) {x = width-1;}  
     if(y>=height ){y=0;} else if(y < 0){ y = height -1;}
 
     if(x==fruitX && y==fruitY) //Score logic
@@ -184,5 +189,6 @@ int main()
         Sleep(10);
        
     }
+    log(score);
    return 0;
 }
